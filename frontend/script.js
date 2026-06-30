@@ -1,5 +1,5 @@
 // Ganti ini kalau backend kamu jalan di alamat/port lain
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://qadrihafyan-tanyakuliah.hf.space";
 
 const uploadForm = document.getElementById("upload-form");
 const uploadBtn = document.getElementById("upload-btn");
