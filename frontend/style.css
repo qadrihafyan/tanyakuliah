@@ -1,0 +1,255 @@
+:root {
+  --paper: #F6F3EC;
+  --ink: #232323;
+  --ink-soft: #5B5648;
+  --rule: #D8D2C0;
+  --highlight: #FFD166;
+  --accent: #2F5D50;
+  --accent-soft: #E4ECE8;
+  --card: #FFFFFF;
+  --font-display: 'Georgia', 'Times New Roman', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Courier New', monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  background-image:
+    linear-gradient(var(--rule) 1px, transparent 1px);
+  background-size: 100% 32px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+.topbar {
+  padding: 40px 32px 24px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.brand-mark {
+  background: var(--accent);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 8px;
+  letter-spacing: 1px;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.brand-name em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.brand-tagline {
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  max-width: 520px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 0;
+  min-height: calc(100vh - 130px);
+}
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+.panel {
+  padding: 32px;
+}
+
+.panel-upload {
+  border-right: 2px solid var(--ink);
+}
+
+@media (max-width: 860px) {
+  .panel-upload { border-right: none; border-bottom: 2px solid var(--ink); }
+}
+
+.panel-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.field {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.field span {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--ink);
+  background: var(--card);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.field-inline {
+  margin-bottom: 16px;
+}
+
+button {
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  padding: 11px 18px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover { background: var(--accent); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.status {
+  font-size: 13px;
+  margin-top: 10px;
+  min-height: 18px;
+  color: var(--accent);
+}
+
+.subject-list {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+
+.subject-list h3 {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+
+#subject-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#subject-list li {
+  font-size: 13px;
+  padding: 8px 10px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  margin-bottom: 6px;
+}
+
+.chat-window {
+  background: var(--card);
+  border: 1px solid var(--ink);
+  min-height: 380px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.chat-empty {
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.bubble {
+  margin-bottom: 18px;
+}
+
+.bubble-q {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.bubble-q::before {
+  content: "T  ";
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+.bubble-a {
+  font-size: 14px;
+  line-height: 1.6;
+  background: var(--accent-soft);
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent);
+  white-space: pre-wrap;
+}
+
+.bubble-sources {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.bubble-sources summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  letter-spacing: 0.5px;
+}
+
+.bubble-sources ul {
+  margin: 8px 0 0;
+  padding-left: 16px;
+}
+
+.chat-form {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid var(--ink);
+  font-size: 14px;
+  font-family: var(--font-body);
+}
+
+.chat-form button {
+  width: auto;
+  padding: 12px 24px;
+}

@@ -1,0 +1,9 @@
+# Mengabaikan folder virtual environment
+backend/venv/
+.venv/
+env/
+venv/
+
+# Mengabaikan cache python
+**/__pycache__/
+*.pyc
